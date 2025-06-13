@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:17.5-alpine3.22
+    container_name: brnx_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: brnx_user
+      POSTGRES_PASSWORD: brnx_password
+      POSTGRES_DB: brnx_db
+    ports:
+      - "9000:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
