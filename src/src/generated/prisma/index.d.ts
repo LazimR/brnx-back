@@ -2220,12 +2220,10 @@ export namespace Prisma {
 
   export type ProviderAvgAggregateOutputType = {
     id: number | null
-    userId: number | null
   }
 
   export type ProviderSumAggregateOutputType = {
     id: number | null
-    userId: number | null
   }
 
   export type ProviderMinAggregateOutputType = {
@@ -2233,7 +2231,6 @@ export namespace Prisma {
     name: string | null
     responsible_name: string | null
     email: string | null
-    userId: number | null
   }
 
   export type ProviderMaxAggregateOutputType = {
@@ -2241,7 +2238,6 @@ export namespace Prisma {
     name: string | null
     responsible_name: string | null
     email: string | null
-    userId: number | null
   }
 
   export type ProviderCountAggregateOutputType = {
@@ -2249,19 +2245,16 @@ export namespace Prisma {
     name: number
     responsible_name: number
     email: number
-    userId: number
     _all: number
   }
 
 
   export type ProviderAvgAggregateInputType = {
     id?: true
-    userId?: true
   }
 
   export type ProviderSumAggregateInputType = {
     id?: true
-    userId?: true
   }
 
   export type ProviderMinAggregateInputType = {
@@ -2269,7 +2262,6 @@ export namespace Prisma {
     name?: true
     responsible_name?: true
     email?: true
-    userId?: true
   }
 
   export type ProviderMaxAggregateInputType = {
@@ -2277,7 +2269,6 @@ export namespace Prisma {
     name?: true
     responsible_name?: true
     email?: true
-    userId?: true
   }
 
   export type ProviderCountAggregateInputType = {
@@ -2285,7 +2276,6 @@ export namespace Prisma {
     name?: true
     responsible_name?: true
     email?: true
-    userId?: true
     _all?: true
   }
 
@@ -2380,7 +2370,6 @@ export namespace Prisma {
     name: string
     responsible_name: string
     email: string
-    userId: number
     _count: ProviderCountAggregateOutputType | null
     _avg: ProviderAvgAggregateOutputType | null
     _sum: ProviderSumAggregateOutputType | null
@@ -2407,7 +2396,6 @@ export namespace Prisma {
     name?: boolean
     responsible_name?: boolean
     email?: boolean
-    userId?: boolean
     demands?: boolean | Provider$demandsArgs<ExtArgs>
     _count?: boolean | ProviderCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["provider"]>
@@ -2417,7 +2405,6 @@ export namespace Prisma {
     name?: boolean
     responsible_name?: boolean
     email?: boolean
-    userId?: boolean
   }, ExtArgs["result"]["provider"]>
 
   export type ProviderSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -2425,7 +2412,6 @@ export namespace Prisma {
     name?: boolean
     responsible_name?: boolean
     email?: boolean
-    userId?: boolean
   }, ExtArgs["result"]["provider"]>
 
   export type ProviderSelectScalar = {
@@ -2433,10 +2419,9 @@ export namespace Prisma {
     name?: boolean
     responsible_name?: boolean
     email?: boolean
-    userId?: boolean
   }
 
-  export type ProviderOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "responsible_name" | "email" | "userId", ExtArgs["result"]["provider"]>
+  export type ProviderOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "responsible_name" | "email", ExtArgs["result"]["provider"]>
   export type ProviderInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     demands?: boolean | Provider$demandsArgs<ExtArgs>
     _count?: boolean | ProviderCountOutputTypeDefaultArgs<ExtArgs>
@@ -2454,7 +2439,6 @@ export namespace Prisma {
       name: string
       responsible_name: string
       email: string
-      userId: number
     }, ExtArgs["result"]["provider"]>
     composites: {}
   }
@@ -2883,7 +2867,6 @@ export namespace Prisma {
     readonly name: FieldRef<"Provider", 'String'>
     readonly responsible_name: FieldRef<"Provider", 'String'>
     readonly email: FieldRef<"Provider", 'String'>
-    readonly userId: FieldRef<"Provider", 'Int'>
   }
     
 
@@ -5589,8 +5572,7 @@ export namespace Prisma {
     id: 'id',
     name: 'name',
     responsible_name: 'responsible_name',
-    email: 'email',
-    userId: 'userId'
+    email: 'email'
   };
 
   export type ProviderScalarFieldEnum = (typeof ProviderScalarFieldEnum)[keyof typeof ProviderScalarFieldEnum]
@@ -5752,7 +5734,6 @@ export namespace Prisma {
     name?: StringFilter<"Provider"> | string
     responsible_name?: StringFilter<"Provider"> | string
     email?: StringFilter<"Provider"> | string
-    userId?: IntFilter<"Provider"> | number
     demands?: DemandListRelationFilter
   }
 
@@ -5761,7 +5742,6 @@ export namespace Prisma {
     name?: SortOrder
     responsible_name?: SortOrder
     email?: SortOrder
-    userId?: SortOrder
     demands?: DemandOrderByRelationAggregateInput
   }
 
@@ -5773,7 +5753,6 @@ export namespace Prisma {
     NOT?: ProviderWhereInput | ProviderWhereInput[]
     name?: StringFilter<"Provider"> | string
     responsible_name?: StringFilter<"Provider"> | string
-    userId?: IntFilter<"Provider"> | number
     demands?: DemandListRelationFilter
   }, "id" | "email">
 
@@ -5782,7 +5761,6 @@ export namespace Prisma {
     name?: SortOrder
     responsible_name?: SortOrder
     email?: SortOrder
-    userId?: SortOrder
     _count?: ProviderCountOrderByAggregateInput
     _avg?: ProviderAvgOrderByAggregateInput
     _max?: ProviderMaxOrderByAggregateInput
@@ -5798,7 +5776,6 @@ export namespace Prisma {
     name?: StringWithAggregatesFilter<"Provider"> | string
     responsible_name?: StringWithAggregatesFilter<"Provider"> | string
     email?: StringWithAggregatesFilter<"Provider"> | string
-    userId?: IntWithAggregatesFilter<"Provider"> | number
   }
 
   export type DemandWhereInput = {
@@ -5971,7 +5948,6 @@ export namespace Prisma {
     name: string
     responsible_name: string
     email: string
-    userId: number
     demands?: DemandCreateNestedManyWithoutProviderInput
   }
 
@@ -5980,7 +5956,6 @@ export namespace Prisma {
     name: string
     responsible_name: string
     email: string
-    userId: number
     demands?: DemandUncheckedCreateNestedManyWithoutProviderInput
   }
 
@@ -5988,7 +5963,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     responsible_name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    userId?: IntFieldUpdateOperationsInput | number
     demands?: DemandUpdateManyWithoutProviderNestedInput
   }
 
@@ -5997,7 +5971,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     responsible_name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    userId?: IntFieldUpdateOperationsInput | number
     demands?: DemandUncheckedUpdateManyWithoutProviderNestedInput
   }
 
@@ -6006,14 +5979,12 @@ export namespace Prisma {
     name: string
     responsible_name: string
     email: string
-    userId: number
   }
 
   export type ProviderUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
     responsible_name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    userId?: IntFieldUpdateOperationsInput | number
   }
 
   export type ProviderUncheckedUpdateManyInput = {
@@ -6021,7 +5992,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     responsible_name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    userId?: IntFieldUpdateOperationsInput | number
   }
 
   export type DemandCreateInput = {
@@ -6247,12 +6217,10 @@ export namespace Prisma {
     name?: SortOrder
     responsible_name?: SortOrder
     email?: SortOrder
-    userId?: SortOrder
   }
 
   export type ProviderAvgOrderByAggregateInput = {
     id?: SortOrder
-    userId?: SortOrder
   }
 
   export type ProviderMaxOrderByAggregateInput = {
@@ -6260,7 +6228,6 @@ export namespace Prisma {
     name?: SortOrder
     responsible_name?: SortOrder
     email?: SortOrder
-    userId?: SortOrder
   }
 
   export type ProviderMinOrderByAggregateInput = {
@@ -6268,12 +6235,10 @@ export namespace Prisma {
     name?: SortOrder
     responsible_name?: SortOrder
     email?: SortOrder
-    userId?: SortOrder
   }
 
   export type ProviderSumOrderByAggregateInput = {
     id?: SortOrder
-    userId?: SortOrder
   }
 
   export type DateTimeFilter<$PrismaModel = never> = {
@@ -6679,7 +6644,6 @@ export namespace Prisma {
     name: string
     responsible_name: string
     email: string
-    userId: number
   }
 
   export type ProviderUncheckedCreateWithoutDemandsInput = {
@@ -6687,7 +6651,6 @@ export namespace Prisma {
     name: string
     responsible_name: string
     email: string
-    userId: number
   }
 
   export type ProviderCreateOrConnectWithoutDemandsInput = {
@@ -6733,7 +6696,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     responsible_name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    userId?: IntFieldUpdateOperationsInput | number
   }
 
   export type ProviderUncheckedUpdateWithoutDemandsInput = {
@@ -6741,7 +6703,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     responsible_name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    userId?: IntFieldUpdateOperationsInput | number
   }
 
   export type ActionsUpsertWithWhereUniqueWithoutDemandInput = {

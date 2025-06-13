@@ -20,7 +20,7 @@ class UserRepository{
         return {id: user.id, name: user.name };
     }
 
-    async getUserList():Promise<UserDTO[]>{
+    async getAllUser():Promise<UserDTO[]>{
         const userList = await prisma.user.findMany();
 
         if(userList.length === 0){

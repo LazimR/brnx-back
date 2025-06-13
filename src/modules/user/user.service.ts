@@ -21,8 +21,8 @@ class UserService {
     return await userRepository.getUser(id);
   }
 
-  async getUserList(): Promise<UserDTO[]> {
-    return await userRepository.getUserList();
+  async getAllUser(): Promise<UserDTO[]> {
+    return await userRepository.getAllUser();
   }
 
   async updateUser(id: number, data: UpdateUserDTO): Promise<UserDTO> {

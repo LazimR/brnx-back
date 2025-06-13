@@ -26,7 +26,6 @@ model Provider {
   responsible_name String
   email            String @unique
 
-  userId  Int
   demands Demand[]
 }
 

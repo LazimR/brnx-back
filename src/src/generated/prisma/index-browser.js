@@ -130,8 +130,7 @@ exports.Prisma.ProviderScalarFieldEnum = {
   id: 'id',
   name: 'name',
   responsible_name: 'responsible_name',
-  email: 'email',
-  userId: 'userId'
+  email: 'email'
 };
 
 exports.Prisma.DemandScalarFieldEnum = {
