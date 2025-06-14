@@ -5699,12 +5699,12 @@ export namespace Prisma {
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
     id?: number
+    name?: string
     AND?: UserWhereInput | UserWhereInput[]
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
-    name?: StringFilter<"User"> | string
     password?: StringFilter<"User"> | string
-  }, "id">
+  }, "id" | "name">
 
   export type UserOrderByWithAggregationInput = {
     id?: SortOrder

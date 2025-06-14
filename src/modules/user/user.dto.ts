@@ -12,8 +12,3 @@ export interface UserDTO{
     id: number,
     name: string
 }
-
-export interface LoginUserDTO{
-    name: string,
-    password: string
-}
