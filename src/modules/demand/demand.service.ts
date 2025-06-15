@@ -10,6 +10,10 @@ class DemandService {
         return await demandRepository.getDemand(id);
     }
 
+    async getAllDemandByProviderId(provider_id: number): Promise<DemandODT[]> {
+        return await demandRepository.getAllDemandByProviderId(provider_id);
+    }
+
     async getAllDemand(): Promise<DemandODT[]> {
         return await demandRepository.getAllDemand();
     }

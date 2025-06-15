@@ -3,8 +3,12 @@ import { DemandCreateODT, DemandODT, DemandUpdateODT } from "./demand.odt";
 
 class DemandRepository {
     async create(data: DemandCreateODT): Promise<DemandODT> {
-        const demand = await prisma.demand.create({ data });
-        return demand;
+        try{
+            const demand = await prisma.demand.create({ data });
+            return demand;
+        }catch(error:any){
+            throw new Error(error)
+        }
     }
 
     async getDemand(id: number): Promise<DemandODT> {
@@ -13,6 +17,14 @@ class DemandRepository {
             throw new Error(`Demanda com o id ${id} não foi encontrada`);
         }
         return demand;
+    }
+
+    async getAllDemandByProviderId(provider_id:number): Promise<DemandODT[]>{
+        const demandList = await prisma.demand.findMany({where:{id_provider:provider_id}});
+        if (demandList.length === 0) {
+            throw new Error('Nenhuma demanda cadastrada');
+        }
+        return demandList;
     }
 
     async getAllDemand(): Promise<DemandODT[]> {

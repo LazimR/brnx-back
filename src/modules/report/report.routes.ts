@@ -4,7 +4,7 @@ import ReportController from "./report.controller";
 
 const reportRoutes = Router();
 
-reportRoutes.get("/", ReportController.createReport.bind);
+reportRoutes.get("/:id_demand", ReportController.createReport);
 
 export default reportRoutes;
 

@@ -1,4 +1,6 @@
 import prisma from "../../config/prisma";
+import bcrypt from "bcryptjs";
+
 import { LoginUserDTO } from "./auth.dto";
 import { UserDTO } from "../user/user.dto";
 
@@ -14,7 +16,9 @@ class Authentication{
         if(!user){
             throw new Error("Usuario não encontrado!")
         }
-        if(user?.password !== data.password){
+
+        const isMatch = await bcrypt.compare(data.password, user.password);
+        if(!isMatch){
                 throw new Error("Senha incorreta!")
             }
 

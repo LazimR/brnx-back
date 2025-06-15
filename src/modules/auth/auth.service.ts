@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 import { UserDTO } from "../user/user.dto";
 import authentication from "./authentication";
@@ -8,12 +8,9 @@ class AuthService {
  
     async login(username: string, password: string): Promise<UserDTO> {
 
-        const saltRounds = 10;
-        const hashedPassword = await bcrypt.hash(password, saltRounds);
-
         const data = {
             name: username,
-            password: hashedPassword
+            password: password
         };
 
         try {

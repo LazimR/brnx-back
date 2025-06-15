@@ -27,7 +27,7 @@ class UserRepository{
             throw new Error('Nenhum usuario cadastrado');
         }
         
-        return userList.map(user => ({
+        return userList.map((user: { id: any; name: any; }) => ({
             id: user.id,
             name: user.name
         }));

@@ -1,6 +1,6 @@
 import userRepository from "./user.repository";
 import { CreateUserDTO, UpdateUserDTO, UserDTO } from "./user.dto";
-import bcrypt from 'bcrypt';
+import bcrypt from "bcryptjs";
 
 class UserService {
   async createUser(data: CreateUserDTO): Promise<UserDTO> {
@@ -10,7 +10,7 @@ class UserService {
 
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(data.password, saltRounds);
-
+  
     return await userRepository.create({
       name: data.name,
       password: hashedPassword

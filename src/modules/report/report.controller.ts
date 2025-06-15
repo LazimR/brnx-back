@@ -1,22 +1,21 @@
-import { Request, Response } from "express";
+import { Request, Response, RequestHandler } from "express";
 import ReportService from "./report.service";
 
 class ReportController {
-  async createReport(req: Request, res: Response): Promise<Response> {
-    const { idDemand } = req.params;
-
+  static createReport: RequestHandler = async (req, res) => {
     try {
-      const pdfBuffer = await ReportService.createReport(Number(idDemand));
+      const { id_demand } = req.params;
+      const pdfBuffer = await ReportService.createReport(parseInt(id_demand));
 
       res.setHeader("Content-Type", "application/pdf");
       res.setHeader("Content-Disposition", "attachment; filename=relatorio.pdf");
       
-      return res.send(pdfBuffer);
-    } catch (error) {
+      res.send(pdfBuffer);
+    } catch (error:any) {
       console.error(error);
-      return res.status(500).json({ error: "Internal Server Error" });
+      res.status(500).json({ error: "Internal Server Error" });
     }
   }
 }
 
-export default new ReportController();
+export default ReportController;

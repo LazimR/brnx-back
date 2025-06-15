@@ -151,7 +151,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/lazaro/Documentos/brnx-back/src/src/generated/prisma",
+      "value": "/home/lazaro/Documentos/brnx/brnx-back/src/src/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -165,7 +165,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/lazaro/Documentos/brnx-back/src/prisma/schema.prisma",
+    "sourceFilePath": "/home/lazaro/Documentos/brnx/brnx-back/src/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -179,6 +179,7 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {

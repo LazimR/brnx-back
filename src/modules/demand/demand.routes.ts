@@ -3,10 +3,11 @@ import DemandController from './demand.controller';
 
 const demandRoutes = Router();
 
-demandRoutes.post('/', DemandController.create.bind);
-demandRoutes.get('/', DemandController.getAllDemands.bind);
-demandRoutes.get('/:id', DemandController.getDemand.bind);
-demandRoutes.put('/:id', DemandController.update.bind);
-demandRoutes.delete('/:id', DemandController.delete.bind);
+demandRoutes.post('/', DemandController.create);
+demandRoutes.get('/', DemandController.getAllDemands);
+demandRoutes.get('/provider/:provider_id', DemandController.getAllDemandsByProviderId)
+demandRoutes.get('/:id', DemandController.getDemand);
+demandRoutes.put('/:id', DemandController.update);
+demandRoutes.delete('/:id', DemandController.delete);
 
 export default demandRoutes;

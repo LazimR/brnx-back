@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM node:24-alpine3.21 AS builder
 
 WORKDIR /app
 
@@ -6,11 +6,18 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 
 # Instale as dependências
-RUN yarn install
+RUN yarn install --production --frozen-lockfile
 
 # Copie o restante do código da aplicação
 COPY . .
 
+RUN yarn prisma:generate
+
+FROM node:24-alpine3.21
+
+WORKDIR /app
+
+COPY --from=builder /app ./
 # Gere o build (caso use TypeScript)
 RUN yarn build
 
@@ -18,4 +25,4 @@ RUN yarn build
 EXPOSE 9000
 
 # Comando para iniciar a aplicação (ajuste se necessário)
-CMD ["yarn", "start:prod"]
+CMD ["node", "dist/server.js"]

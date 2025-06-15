@@ -9,8 +9,15 @@ const groq = new Groq({
 class IAClient {
   async gerarResumo(texto: string): Promise<string> {
     const prompt = `
-      Resuma o seguinte histórico de ações de uma demanda em poucas frases objetivas e bem estruturadas:
+      Resuma o seguinte histórico de ações de forma bem estruturada e resumida, de acordo com o padrão abaixo, 
+      não explique o que é o documento:
       
+      **Data de Geração do Documento**
+        - Data de geração: Formato DD/MM/YYYY (ex.: 15/06/2025)
+
+      **Ações Registradas**:
+        - Nome do Técnico, Descrição, Data de Criação (DD/MM/YYYY)
+
       ${texto}
     `;
 

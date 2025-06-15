@@ -10,6 +10,10 @@ class ActionsService {
         return await actionsRepository.getAction(id);
     }
 
+    async getAllActionsByDemandaId(demandId: number): Promise<ActionsODT[]> {
+        return await actionsRepository.getAllActionsByDemandId(demandId);
+    }
+
     async getAllActions(): Promise<ActionsODT[]> {
         return await actionsRepository.getAllActions();
     }
