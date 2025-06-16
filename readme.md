@@ -28,6 +28,10 @@ Este projeto é o back-end do sistema de relatórios de demandas de problemas en
    ```
 
 4. **Configure o banco de dados e o Prisma conforme necessário.**
+   ```bash
+   prisma:generate
+   prisma:migrate
+   ```
 
 5. **Inicie o servidor:**
    ```bash
