@@ -13,7 +13,7 @@ Este projeto é o back-end do sistema de relatórios de demandas de problemas en
 
 1. **Clone o repositório:**
    ```bash
-   git clone <url-do-repositorio>
+   git clone https://github.com/LazimR/brnx-back
    cd brnx-back
    ```
 
